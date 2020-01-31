@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		A33E449723E4271A00EFEA74 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E449623E4271A00EFEA74 /* main.swift */; };
+		A33E449E23E4285D00EFEA74 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E449D23E4285D00EFEA74 /* Protocols.swift */; };
+		A33E44A223E428DB00EFEA74 /* Sourcery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44A123E428DB00EFEA74 /* Sourcery.swift */; };
+		A33E44A723E4295200EFEA74 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44A423E4295200EFEA74 /* Beer.swift */; };
+		A33E44A823E4295200EFEA74 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44A523E4295200EFEA74 /* Style.swift */; };
+		A33E44A923E4295200EFEA74 /* Brewery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44A623E4295200EFEA74 /* Brewery.swift */; };
+		A33E44B223E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44B023E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift */; };
+		A33E44B323E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44B123E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift */; };
+		A33E44B623E42CBA00EFEA74 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44B523E42CBA00EFEA74 /* APIManager.swift */; };
+		A33E44B823E42CF000EFEA74 /* SourceryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44B723E42CF000EFEA74 /* SourceryProtocols.swift */; };
+		A33E44BD23E42F0000EFEA74 /* GetStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44BC23E42F0000EFEA74 /* GetStyles.swift */; };
+		A33E44BF23E42F7B00EFEA74 /* GetBeers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44BE23E42F7B00EFEA74 /* GetBeers.swift */; };
+		A33E44C123E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C023E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift */; };
+		A33E44C423E4328000EFEA74 /* AutoModelKeyContainer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */; };
+		A33E44C823E4348300EFEA74 /* GetPlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C723E4348300EFEA74 /* GetPlaylists.swift */; };
+		A3D17D2D23E43BAF00FE25A0 /* playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D2C23E43BAF00FE25A0 /* playground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +40,25 @@
 /* Begin PBXFileReference section */
 		A33E449323E4271900EFEA74 /* SourceryUsaCases */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SourceryUsaCases; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33E449623E4271A00EFEA74 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A33E449D23E4285D00EFEA74 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		A33E44A123E428DB00EFEA74 /* Sourcery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sourcery.swift; sourceTree = "<group>"; };
+		A33E44A423E4295200EFEA74 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		A33E44A523E4295200EFEA74 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		A33E44A623E4295200EFEA74 /* Brewery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brewery.swift; sourceTree = "<group>"; };
+		A33E44AB23E429D100EFEA74 /* AutoAPICollectionResponse.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoAPICollectionResponse.stencil; sourceTree = "<group>"; };
+		A33E44AC23E429D100EFEA74 /* AutoJSONDecodableAPIModel.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoJSONDecodableAPIModel.stencil; sourceTree = "<group>"; };
+		A33E44AD23E429D100EFEA74 /* AutoAPIRequestQueryItems.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoAPIRequestQueryItems.stencil; sourceTree = "<group>"; };
+		A33E44B023E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoJSONDecodableAPIModel.generated.swift; sourceTree = "<group>"; };
+		A33E44B123E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAPIRequestQueryItems.generated.swift; sourceTree = "<group>"; };
+		A33E44B523E42CBA00EFEA74 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		A33E44B723E42CF000EFEA74 /* SourceryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceryProtocols.swift; sourceTree = "<group>"; };
+		A33E44BC23E42F0000EFEA74 /* GetStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStyles.swift; sourceTree = "<group>"; };
+		A33E44BE23E42F7B00EFEA74 /* GetBeers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBeers.swift; sourceTree = "<group>"; };
+		A33E44C023E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAPICollectionResponse.generated.swift; sourceTree = "<group>"; };
+		A33E44C223E431BE00EFEA74 /* AutoModelKeyContainer.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoModelKeyContainer.stencil; sourceTree = "<group>"; };
+		A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoModelKeyContainer.generated.swift; sourceTree = "<group>"; };
+		A33E44C723E4348300EFEA74 /* GetPlaylists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylists.swift; sourceTree = "<group>"; };
+		A3D17D2C23E43BAF00FE25A0 /* playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +91,92 @@
 		A33E449523E4271A00EFEA74 /* SourceryUsaCases */ = {
 			isa = PBXGroup;
 			children = (
+				A33E44B923E42EDD00EFEA74 /* Services */,
+				A33E44AE23E429FC00EFEA74 /* Sourcery */,
 				A33E449623E4271A00EFEA74 /* main.swift */,
+				A33E44B423E42C8400EFEA74 /* API */,
+				A3D17D2C23E43BAF00FE25A0 /* playground.swift */,
 			);
 			path = SourceryUsaCases;
+			sourceTree = "<group>";
+		};
+		A33E44A323E4293B00EFEA74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44A423E4295200EFEA74 /* Beer.swift */,
+				A33E44A623E4295200EFEA74 /* Brewery.swift */,
+				A33E44A523E4295200EFEA74 /* Style.swift */,
+				A33E44A123E428DB00EFEA74 /* Sourcery.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A33E44AA23E429D100EFEA74 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44AB23E429D100EFEA74 /* AutoAPICollectionResponse.stencil */,
+				A33E44AC23E429D100EFEA74 /* AutoJSONDecodableAPIModel.stencil */,
+				A33E44AD23E429D100EFEA74 /* AutoAPIRequestQueryItems.stencil */,
+				A33E44C223E431BE00EFEA74 /* AutoModelKeyContainer.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		A33E44AE23E429FC00EFEA74 /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44AF23E42A0A00EFEA74 /* Generated */,
+				A33E44AA23E429D100EFEA74 /* Templates */,
+				A33E44B723E42CF000EFEA74 /* SourceryProtocols.swift */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		A33E44AF23E42A0A00EFEA74 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */,
+				A33E44C023E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift */,
+				A33E44B123E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift */,
+				A33E44B023E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		A33E44B423E42C8400EFEA74 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A33E449D23E4285D00EFEA74 /* Protocols.swift */,
+				A33E44B523E42CBA00EFEA74 /* APIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A33E44B923E42EDD00EFEA74 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44C623E4343B00EFEA74 /* Deezer */,
+				A33E44C523E4341900EFEA74 /* BreweryDB */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A33E44C523E4341900EFEA74 /* BreweryDB */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44A323E4293B00EFEA74 /* Models */,
+				A33E44BC23E42F0000EFEA74 /* GetStyles.swift */,
+				A33E44BE23E42F7B00EFEA74 /* GetBeers.swift */,
+			);
+			path = BreweryDB;
+			sourceTree = "<group>";
+		};
+		A33E44C623E4343B00EFEA74 /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				A33E44C723E4348300EFEA74 /* GetPlaylists.swift */,
+			);
+			path = Deezer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +237,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D17D2D23E43BAF00FE25A0 /* playground.swift in Sources */,
+				A33E44BD23E42F0000EFEA74 /* GetStyles.swift in Sources */,
+				A33E44B223E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift in Sources */,
+				A33E44A223E428DB00EFEA74 /* Sourcery.swift in Sources */,
+				A33E449E23E4285D00EFEA74 /* Protocols.swift in Sources */,
+				A33E44B623E42CBA00EFEA74 /* APIManager.swift in Sources */,
 				A33E449723E4271A00EFEA74 /* main.swift in Sources */,
+				A33E44C123E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift in Sources */,
+				A33E44C823E4348300EFEA74 /* GetPlaylists.swift in Sources */,
+				A33E44C423E4328000EFEA74 /* AutoModelKeyContainer.generated.swift in Sources */,
+				A33E44B823E42CF000EFEA74 /* SourceryProtocols.swift in Sources */,
+				A33E44B323E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift in Sources */,
+				A33E44A723E4295200EFEA74 /* Beer.swift in Sources */,
+				A33E44A923E4295200EFEA74 /* Brewery.swift in Sources */,
+				A33E44BF23E42F7B00EFEA74 /* GetBeers.swift in Sources */,
+				A33E44A823E4295200EFEA74 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
