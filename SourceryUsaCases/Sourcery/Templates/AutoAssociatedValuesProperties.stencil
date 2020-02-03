@@ -5,17 +5,23 @@
   {% for case in enum.cases %}
     {% if case.associatedValues.count == 1 %}
     {% for value in case.associatedValues %}
-    var {{ value.localName }}: {{value.typeName}}? {
+    var {{ case.name }}{{ value.localName|capitalize }}: {{value.typeName}}? {
         switch self {
-             {% for case in enum.cases %}
-             {% if case.hasAssociatedValue%}
-             case .{{case.name}}({% for internalValue in case.associatedValues %}let {{internalValue.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
-                return {% for returnValue in case.associatedValues %}{% if returnValue.localName == value.localName %}{{ returnValue.localName }} {% endif %}{% if returnValue.localName != value.localName and forloop.last %}nil {% endif %}{% endfor %}
-             {% endif %}
-             {% if case.hasAssociatedValue == 0 %}
-             case .{{case.name}}:
+             {% for internalCase in enum.cases %}
+             {% if internalCase.hasAssociatedValue %}
+             {% if internalCase.associatedValues != 1 %}
+            case .{{internalCase.name}}({% for internalValue in internalCase.associatedValues %}{% if internalValue.localName == value.localName %}let {{value.localName}}{% endif %}{% if internalValue.localName != value.localName %}_{% endif %}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+                {% if internalCase.name == case.name %}
+                return {% for returnValue in internalCase.associatedValues %}{% if returnValue.localName == value.localName %}{{ returnValue.localName }} {% endif %}{% if returnValue.localName != value.localName and forloop.last %}nil {% endif %}{% endfor %}
+                {% endif %}
+                {% if internalCase.name != case.name %}
                 return nil
-             {% endif %}
+                {% endif %}
+                {% endif %}
+              {% endif %}
+                {% if not internalCase.hasAssociatedValue %}
+            case .{{internalCase.name}}: return nil
+                {% endif %} 
              {% endfor %}
         }
     }
@@ -32,7 +38,7 @@
             {% for internalCase in enum.cases %}
             {% if internalCase.hasAssociatedValue %}
             {% if internalCase.name == case.name %}
-            case .{{internalCase.name}}{% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+            case .{{internalCase.name}}{% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}{% if internalCase.name == case.name %}let {{value.localName}}{% endif %}{% if internalCase.name != case.name %}_{% endif %}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
                 return {% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}{{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}
                  {% endif %}
                  {% endif %}
@@ -47,31 +53,30 @@
 {% endfor %}
 
 {#
-
-    var data: (data:VehicleData?, {
-        switch self {
-             case .car(let description,let engineType,let drivetrain):
-                return description
-             case .rocketlet engines):
-                return description
-        }
+    Example:
+    enum Vehicle: AutoCodable, AutoEnumProperties {
+        case car(description: VehicleData, engineType: EngineType, drivetrain: DrivetrainType)
+        case rocket(engines: Int)
     }
 
+    internal extension Vehicle {
 
-    return .EnumCase: name = AWD, rawValue = nil, associatedValues = [AssociatedValue: localName = Optional("type"), externalName = nil, typeName = AWDType, annotations = [:]], annotations = [:], hasAssociatedValue = true
-    internal extension DrivetrainType {
-
-        var type: AWDType? {
+        var engines: Int? {
             switch self {
-            case .AWD(let type):
-                return type
-            case .FWD:
-                return nil
-            case .RWD:
-                return nil
+                 case .car(_,_,_):
+                    return nil
+                 case .rocket(let engines):
+                    return engines
+            }
+        }
+
+        var carAssociatedValues: (description: VehicleData, engineType: EngineType, drivetrain: DrivetrainType)? {
+            switch self {
+                case .car(let description,let engineType,let drivetrain):
+                    return (description,engineType,drivetrain)
+                default: return nil
             }
         }
     }
-
  #}
 

@@ -16,14 +16,14 @@ struct Garage: Codable {
     let vehicles: [Vehicle]
 }
 
-enum EngineType: AutoCodable {
+enum EngineType: AutoCodable, AutoEnumProperties {
     case reciprocating(fuelType: [FuelType], architecture: EngineArchitecture, ignition: IgnitionType, cylinders: Int, airIntake: [AirIntakeType], stroke: StrokeType)
     case rotary(airIntake: [AirIntakeType])
     case electric
 }
 
 enum DrivetrainType: AutoCodable, AutoEnumProperties {
-    case AWD(type: AWDType)
+    case AWD(awdType: AWDType)
     case FWD
     case RWD
 }
@@ -62,7 +62,7 @@ enum EngineArchitecture: AutoCodable {
     case OPOC
 }
 
-enum FuelType: AutoCodable {
+enum FuelType: AutoCodable, AutoEnumProperties {
     case petrol(quality: [PetrolFuelType])
     case diesel(quality: Int)
 }
@@ -92,7 +92,7 @@ func testEnums() {
                                         cylinders: 4,
                                         airIntake: [.turbocharged],
                                         stroke: .three),
-             drivetrain: .AWD(type: .auto)),
+             drivetrain: .AWD(awdType: .auto)),
         .car(description: .init(manufacturer: "Mazda", model: "RX-8", year: 2005),
              engineType: .rotary(airIntake: []),
              drivetrain: .RWD)

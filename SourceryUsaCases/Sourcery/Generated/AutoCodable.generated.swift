@@ -113,7 +113,7 @@ extension DrivetrainType {
         case AWD
         case FWD
         case RWD
-        case type
+        case awdType
     }
 
     internal init(from decoder: Decoder) throws {
@@ -121,8 +121,8 @@ extension DrivetrainType {
 
         if container.allKeys.contains(.AWD), try container.decodeNil(forKey: .AWD) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .AWD)
-            let type = try associatedValues.decode(AWDType.self, forKey: .type)
-            self = .AWD(type: type)
+            let awdType = try associatedValues.decode(AWDType.self, forKey: .awdType)
+            self = .AWD(awdType: awdType)
             return
         }
         if container.allKeys.contains(.FWD), try container.decodeNil(forKey: .FWD) == false {
@@ -140,9 +140,9 @@ extension DrivetrainType {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         switch self {
-        case let .AWD(type):
+        case let .AWD(awdType):
             var associatedValues = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .AWD)
-            try associatedValues.encode(type, forKey: .type)
+            try associatedValues.encode(awdType, forKey: .awdType)
         case .FWD:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .FWD)
         case .RWD:
