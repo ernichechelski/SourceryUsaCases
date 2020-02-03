@@ -2,9 +2,9 @@
 // DO NOT EDIT
 
 
-extension Beer {
+extension Beer: ModelKeyContainer {
   var modelKey: String { "modelKeyBeer"}
 }
-extension Playlist {
+extension Playlist: ModelKeyContainer {
   var modelKey: String { "modelKeyPlaylist"}
 }

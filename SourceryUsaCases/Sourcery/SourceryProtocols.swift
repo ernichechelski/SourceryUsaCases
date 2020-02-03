@@ -22,3 +22,12 @@ protocol AutoQueryItems {}
 
 protocol AutoModelKeyContainer {}
 
+protocol AutoDecodable: Decodable {}
+
+protocol AutoEncodable: Encodable {}
+
+protocol AutoCodable: AutoDecodable, AutoEncodable {}
+
+protocol AutoCaseIterable {}
+
+protocol AutoEnumProperties {}

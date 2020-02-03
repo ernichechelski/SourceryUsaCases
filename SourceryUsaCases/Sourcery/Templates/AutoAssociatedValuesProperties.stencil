@@ -1,0 +1,76 @@
+{% for enum in types.implementing.AutoEnumProperties|enum %}
+{{ enum.accessLevel }} extension {{ enum.name }} {
+
+  {% if enum.hasAssociatedValues %}
+  {% for case in enum.cases %}
+    {% for value in case.associatedValues %}
+    var {{ value.localName }}: {{value.typeName}}? {
+        switch self {
+             {% for internalCase in enum.cases %}
+             {% if internalCase.hasAssociatedValue %}
+             case .{{internalCase.name}}{{ '(' if forloop.first }}{% for value in internalCase.associatedValues %}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+                return {{ value.localName }}
+             {% endif %}
+             {% if internalCase.hasAssociatedValue == 0 %}
+             case .{{case.name}}:
+                return nil
+             {% endif %}
+             {% endfor %}
+        }
+    }
+    {% endfor %}
+  {% endfor %}
+  {% endif %}
+
+  {% if enum.hasAssociatedValues %}
+  {% for case in enum.cases %}
+    {% if case.hasAssociatedValue %}
+        var {{case.name}}AssociatedValues: {% for value in case.associatedValues %}{{ '(' if forloop.first }}{{ ' ' if not forloop.first }}{{value.localName}}: {{value.typeName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}? {
+            switch self {
+                 {% for internalCase in enum.cases %}
+                 {% if internalCase.hasAssociatedValue %}
+                 {% if internalCase.name == case.name %}
+                 case .{{internalCase.name}}{% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+                    return {% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}{{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}
+                 {% endif %}
+                 {% endif %}
+                  {{ 'default: return nil' if forloop.last }}
+                 {% endfor %}
+            }
+        }
+    {% endif %}
+
+  {% endfor %}
+  {% endif %}
+}
+{% endfor %}
+
+{#
+
+    var data: (data:VehicleData?, {
+        switch self {
+             case .car(let description,let engineType,let drivetrain):
+                return description
+             case .rocketlet engines):
+                return description
+        }
+    }
+
+
+    return .EnumCase: name = AWD, rawValue = nil, associatedValues = [AssociatedValue: localName = Optional("type"), externalName = nil, typeName = AWDType, annotations = [:]], annotations = [:], hasAssociatedValue = true
+    internal extension DrivetrainType {
+
+        var type: AWDType? {
+            switch self {
+            case .AWD(let type):
+                return type
+            case .FWD:
+                return nil
+            case .RWD:
+                return nil
+            }
+        }
+    }
+
+ #}
+

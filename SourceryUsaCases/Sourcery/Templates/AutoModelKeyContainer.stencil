@@ -1,6 +1,6 @@
 {% for type in types.implementing.AutoModelKeyContainer %}
 {# Iterate over all types implementing AutoModelKeyContainer #}
-extension {{ type.name }} {
+extension {{ type.name }}: ModelKeyContainer {
   var modelKey: String { "modelKey{{ type.name }}"}
 }
 {% endfor %}

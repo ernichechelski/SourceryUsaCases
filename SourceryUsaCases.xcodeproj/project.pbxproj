@@ -22,7 +22,11 @@
 		A33E44C123E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C023E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift */; };
 		A33E44C423E4328000EFEA74 /* AutoModelKeyContainer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */; };
 		A33E44C823E4348300EFEA74 /* GetPlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C723E4348300EFEA74 /* GetPlaylists.swift */; };
+		A3A03E9D23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A03E9C23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift */; };
 		A3D17D2D23E43BAF00FE25A0 /* playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D2C23E43BAF00FE25A0 /* playground.swift */; };
+		A3D17D3123E43F9300FE25A0 /* TestEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D3023E43F9300FE25A0 /* TestEnums.swift */; };
+		A3D17D3323E43FBE00FE25A0 /* AutoCodable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D3223E43FBE00FE25A0 /* AutoCodable.generated.swift */; };
+		A3D17D3523E4402F00FE25A0 /* Codable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D3423E4402F00FE25A0 /* Codable+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +62,13 @@
 		A33E44C223E431BE00EFEA74 /* AutoModelKeyContainer.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoModelKeyContainer.stencil; sourceTree = "<group>"; };
 		A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoModelKeyContainer.generated.swift; sourceTree = "<group>"; };
 		A33E44C723E4348300EFEA74 /* GetPlaylists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylists.swift; sourceTree = "<group>"; };
+		A3A03E9B23E81CA60085B681 /* AutoAssociatedValuesProperties.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoAssociatedValuesProperties.stencil; sourceTree = "<group>"; };
+		A3A03E9C23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAssociatedValuesProperties.generated.swift; sourceTree = "<group>"; };
 		A3D17D2C23E43BAF00FE25A0 /* playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playground.swift; sourceTree = "<group>"; };
+		A3D17D2E23E43F2900FE25A0 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
+		A3D17D3023E43F9300FE25A0 /* TestEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEnums.swift; sourceTree = "<group>"; };
+		A3D17D3223E43FBE00FE25A0 /* AutoCodable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCodable.generated.swift; sourceTree = "<group>"; };
+		A3D17D3423E4402F00FE25A0 /* Codable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +124,12 @@
 		A33E44AA23E429D100EFEA74 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				A3A03E9B23E81CA60085B681 /* AutoAssociatedValuesProperties.stencil */,
 				A33E44AB23E429D100EFEA74 /* AutoAPICollectionResponse.stencil */,
 				A33E44AC23E429D100EFEA74 /* AutoJSONDecodableAPIModel.stencil */,
 				A33E44AD23E429D100EFEA74 /* AutoAPIRequestQueryItems.stencil */,
 				A33E44C223E431BE00EFEA74 /* AutoModelKeyContainer.stencil */,
+				A3D17D2E23E43F2900FE25A0 /* AutoCodable.swifttemplate */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -135,6 +147,8 @@
 		A33E44AF23E42A0A00EFEA74 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				A3A03E9C23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift */,
+				A3D17D3223E43FBE00FE25A0 /* AutoCodable.generated.swift */,
 				A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */,
 				A33E44C023E4301600EFEA74 /* AutoAPICollectionResponse.generated.swift */,
 				A33E44B123E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift */,
@@ -148,6 +162,7 @@
 			children = (
 				A33E449D23E4285D00EFEA74 /* Protocols.swift */,
 				A33E44B523E42CBA00EFEA74 /* APIManager.swift */,
+				A3D17D3423E4402F00FE25A0 /* Codable+JSON.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -155,6 +170,7 @@
 		A33E44B923E42EDD00EFEA74 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A3D17D2F23E43F6000FE25A0 /* Test */,
 				A33E44C623E4343B00EFEA74 /* Deezer */,
 				A33E44C523E4341900EFEA74 /* BreweryDB */,
 			);
@@ -177,6 +193,14 @@
 				A33E44C723E4348300EFEA74 /* GetPlaylists.swift */,
 			);
 			path = Deezer;
+			sourceTree = "<group>";
+		};
+		A3D17D2F23E43F6000FE25A0 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				A3D17D3023E43F9300FE25A0 /* TestEnums.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A03E9D23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift in Sources */,
 				A3D17D2D23E43BAF00FE25A0 /* playground.swift in Sources */,
 				A33E44BD23E42F0000EFEA74 /* GetStyles.swift in Sources */,
 				A33E44B223E42BE200EFEA74 /* AutoJSONDecodableAPIModel.generated.swift in Sources */,
@@ -249,10 +274,13 @@
 				A33E44C423E4328000EFEA74 /* AutoModelKeyContainer.generated.swift in Sources */,
 				A33E44B823E42CF000EFEA74 /* SourceryProtocols.swift in Sources */,
 				A33E44B323E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift in Sources */,
+				A3D17D3323E43FBE00FE25A0 /* AutoCodable.generated.swift in Sources */,
 				A33E44A723E4295200EFEA74 /* Beer.swift in Sources */,
 				A33E44A923E4295200EFEA74 /* Brewery.swift in Sources */,
 				A33E44BF23E42F7B00EFEA74 /* GetBeers.swift in Sources */,
 				A33E44A823E4295200EFEA74 /* Style.swift in Sources */,
+				A3D17D3523E4402F00FE25A0 /* Codable+JSON.swift in Sources */,
+				A3D17D3123E43F9300FE25A0 /* TestEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
