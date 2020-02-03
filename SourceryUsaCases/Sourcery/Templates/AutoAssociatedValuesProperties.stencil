@@ -6,12 +6,12 @@
     {% for value in case.associatedValues %}
     var {{ value.localName }}: {{value.typeName}}? {
         switch self {
-             {% for internalCase in enum.cases %}
-             {% if internalCase.hasAssociatedValue %}
-             case .{{internalCase.name}}{{ '(' if forloop.first }}{% for value in internalCase.associatedValues %}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+             {% for case in enum.cases %}
+             {% if case.hasAssociatedValue %}
+             case .{{case.name}}{{ '(' if forloop.first }}{% for value in case.associatedValues %}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
                 return {{ value.localName }}
              {% endif %}
-             {% if internalCase.hasAssociatedValue == 0 %}
+             {% if case.hasAssociatedValue == 0 %}
              case .{{case.name}}:
                 return nil
              {% endif %}
@@ -39,7 +39,6 @@
             }
         }
     {% endif %}
-
   {% endfor %}
   {% endif %}
 }

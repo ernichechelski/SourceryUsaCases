@@ -8,9 +8,9 @@ internal extension DrivetrainType {
         switch self {
              case .AWD(let type):
                 return type
-             case .AWD:
+             case .FWD:
                 return nil
-             case .AWD:
+             case .RWD:
                 return nil
         }
     }
@@ -22,9 +22,6 @@ internal extension DrivetrainType {
                   default: return nil
             }
         }
-
-
-
 }
 internal extension Vehicle {
 
@@ -68,7 +65,6 @@ internal extension Vehicle {
                   default: return nil
             }
         }
-
         var rocketAssociatedValues: (engines: Int)? {
             switch self {
                  case .rocket(let engines):
@@ -76,7 +72,6 @@ internal extension Vehicle {
                   default: return nil
             }
         }
-
 }
 
 
