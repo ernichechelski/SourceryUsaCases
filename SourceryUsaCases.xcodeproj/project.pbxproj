@@ -23,6 +23,7 @@
 		A33E44C423E4328000EFEA74 /* AutoModelKeyContainer.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C323E4328000EFEA74 /* AutoModelKeyContainer.generated.swift */; };
 		A33E44C823E4348300EFEA74 /* GetPlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33E44C723E4348300EFEA74 /* GetPlaylists.swift */; };
 		A3A03E9D23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A03E9C23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift */; };
+		A3A03E9F23E847EC0085B681 /* CarDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A03E9E23E847EC0085B681 /* CarDatabase.swift */; };
 		A3D17D2D23E43BAF00FE25A0 /* playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D2C23E43BAF00FE25A0 /* playground.swift */; };
 		A3D17D3123E43F9300FE25A0 /* TestEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D3023E43F9300FE25A0 /* TestEnums.swift */; };
 		A3D17D3323E43FBE00FE25A0 /* AutoCodable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D17D3223E43FBE00FE25A0 /* AutoCodable.generated.swift */; };
@@ -64,6 +65,7 @@
 		A33E44C723E4348300EFEA74 /* GetPlaylists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaylists.swift; sourceTree = "<group>"; };
 		A3A03E9B23E81CA60085B681 /* AutoAssociatedValuesProperties.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoAssociatedValuesProperties.stencil; sourceTree = "<group>"; };
 		A3A03E9C23E81F100085B681 /* AutoAssociatedValuesProperties.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoAssociatedValuesProperties.generated.swift; sourceTree = "<group>"; };
+		A3A03E9E23E847EC0085B681 /* CarDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDatabase.swift; sourceTree = "<group>"; };
 		A3D17D2C23E43BAF00FE25A0 /* playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playground.swift; sourceTree = "<group>"; };
 		A3D17D2E23E43F2900FE25A0 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
 		A3D17D3023E43F9300FE25A0 /* TestEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEnums.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				A3D17D3023E43F9300FE25A0 /* TestEnums.swift */,
+				A3A03E9E23E847EC0085B681 /* CarDatabase.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				A33E44B323E42BE200EFEA74 /* AutoAPIRequestQueryItems.generated.swift in Sources */,
 				A3D17D3323E43FBE00FE25A0 /* AutoCodable.generated.swift in Sources */,
 				A33E44A723E4295200EFEA74 /* Beer.swift in Sources */,
+				A3A03E9F23E847EC0085B681 /* CarDatabase.swift in Sources */,
 				A33E44A923E4295200EFEA74 /* Brewery.swift in Sources */,
 				A33E44BF23E42F7B00EFEA74 /* GetBeers.swift in Sources */,
 				A33E44A823E4295200EFEA74 /* Style.swift in Sources */,
