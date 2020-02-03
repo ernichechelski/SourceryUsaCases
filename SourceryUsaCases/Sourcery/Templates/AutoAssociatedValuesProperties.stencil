@@ -3,13 +3,14 @@
 
   {% if enum.hasAssociatedValues %}
   {% for case in enum.cases %}
+    {% if case.associatedValues.count == 1 %}
     {% for value in case.associatedValues %}
     var {{ value.localName }}: {{value.typeName}}? {
         switch self {
              {% for case in enum.cases %}
-             {% if case.hasAssociatedValue %}
-             case .{{case.name}}{{ '(' if forloop.first }}{% for value in case.associatedValues %}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
-                return {{ value.localName }}
+             {% if case.hasAssociatedValue%}
+             case .{{case.name}}({% for internalValue in case.associatedValues %}let {{internalValue.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+                return {% for returnValue in case.associatedValues %}{% if returnValue.localName == value.localName %}{{ returnValue.localName }} {% endif %}{% if returnValue.localName != value.localName and forloop.last %}nil {% endif %}{% endfor %}
              {% endif %}
              {% if case.hasAssociatedValue == 0 %}
              case .{{case.name}}:
@@ -19,25 +20,26 @@
         }
     }
     {% endfor %}
+    {% endif %}
   {% endfor %}
   {% endif %}
 
   {% if enum.hasAssociatedValues %}
   {% for case in enum.cases %}
-    {% if case.hasAssociatedValue %}
-        var {{case.name}}AssociatedValues: {% for value in case.associatedValues %}{{ '(' if forloop.first }}{{ ' ' if not forloop.first }}{{value.localName}}: {{value.typeName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}? {
-            switch self {
-                 {% for internalCase in enum.cases %}
-                 {% if internalCase.hasAssociatedValue %}
-                 {% if internalCase.name == case.name %}
-                 case .{{internalCase.name}}{% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
-                    return {% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}{{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}
+    {% if case.hasAssociatedValue and case.associatedValues.count != 1%}
+    var {{case.name}}AssociatedValues: {% for value in case.associatedValues %}{{ '(' if forloop.first }}{{ ' ' if not forloop.first }}{{value.localName}}: {{value.typeName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}? {
+        switch self {
+            {% for internalCase in enum.cases %}
+            {% if internalCase.hasAssociatedValue %}
+            {% if internalCase.name == case.name %}
+            case .{{internalCase.name}}{% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}let {{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}:
+                return {% for value in internalCase.associatedValues %}{{ '(' if forloop.first }}{{value.localName}}{{ ',' if not forloop.last }}{{ ')' if forloop.last }}{% endfor %}
                  {% endif %}
                  {% endif %}
-                  {{ 'default: return nil' if forloop.last }}
+            {{ 'default: return nil' if forloop.last }}
                  {% endfor %}
-            }
         }
+    }
     {% endif %}
   {% endfor %}
   {% endif %}
