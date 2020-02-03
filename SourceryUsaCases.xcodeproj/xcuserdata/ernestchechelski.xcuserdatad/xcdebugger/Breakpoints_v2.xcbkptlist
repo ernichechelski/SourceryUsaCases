@@ -30,9 +30,9 @@
             filePath = "SourceryUsaCases/Services/Test/CarDatabase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "testEnums()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "testCarDatabase()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

@@ -251,7 +251,9 @@ extension CarName {
         case Toyota
         case Volkswagen
         case Volvo
-        case model
+        case audiModel
+        case fordModel
+        case mazdaModel
     }
 
     internal init(from decoder: Decoder) throws {
@@ -259,8 +261,8 @@ extension CarName {
 
         if container.allKeys.contains(.Audi), try container.decodeNil(forKey: .Audi) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Audi)
-            let model = try associatedValues.decode(AudiModel.self, forKey: .model)
-            self = .Audi(model: model)
+            let audiModel = try associatedValues.decode(AudiModel.self, forKey: .audiModel)
+            self = .Audi(audiModel: audiModel)
             return
         }
         if container.allKeys.contains(.BMW), try container.decodeNil(forKey: .BMW) == false {
@@ -293,8 +295,8 @@ extension CarName {
         }
         if container.allKeys.contains(.Ford), try container.decodeNil(forKey: .Ford) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Ford)
-            let model = try associatedValues.decode(FordModel.self, forKey: .model)
-            self = .Ford(model: model)
+            let fordModel = try associatedValues.decode(FordModel.self, forKey: .fordModel)
+            self = .Ford(fordModel: fordModel)
             return
         }
         if container.allKeys.contains(.GM), try container.decodeNil(forKey: .GM) == false {
@@ -363,8 +365,8 @@ extension CarName {
         }
         if container.allKeys.contains(.Mazda), try container.decodeNil(forKey: .Mazda) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Mazda)
-            let model = try associatedValues.decode(MazdaModel.self, forKey: .model)
-            self = .Mazda(model: model)
+            let mazdaModel = try associatedValues.decode(MazdaModel.self, forKey: .mazdaModel)
+            self = .Mazda(mazdaModel: mazdaModel)
             return
         }
         if container.allKeys.contains(.MercedesBenz), try container.decodeNil(forKey: .MercedesBenz) == false {
@@ -438,9 +440,9 @@ extension CarName {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         switch self {
-        case let .Audi(model):
+        case let .Audi(audiModel):
             var associatedValues = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Audi)
-            try associatedValues.encode(model, forKey: .model)
+            try associatedValues.encode(audiModel, forKey: .audiModel)
         case .BMW:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .BMW)
         case .Buick:
@@ -455,9 +457,9 @@ extension CarName {
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Dodge)
         case .Ferrari:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Ferrari)
-        case let .Ford(model):
+        case let .Ford(fordModel):
             var associatedValues = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Ford)
-            try associatedValues.encode(model, forKey: .model)
+            try associatedValues.encode(fordModel, forKey: .fordModel)
         case .GM:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .GM)
         case .GEM:
@@ -490,9 +492,9 @@ extension CarName {
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Lincoln)
         case .Lotus:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Lotus)
-        case let .Mazda(model):
+        case let .Mazda(mazdaModel):
             var associatedValues = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .Mazda)
-            try associatedValues.encode(model, forKey: .model)
+            try associatedValues.encode(mazdaModel, forKey: .mazdaModel)
         case .MercedesBenz:
             _ = container.nestedContainer(keyedBy: CodingKeys.self, forKey: .MercedesBenz)
         case .Mercury:
@@ -765,7 +767,7 @@ extension FuelType {
         }
         if container.allKeys.contains(.diesel), try container.decodeNil(forKey: .diesel) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .diesel)
-            let quality = try associatedValues.decode(Int.self, forKey: .quality)
+            let quality = try associatedValues.decode([DieselFuelType].self, forKey: .quality)
             self = .diesel(quality: quality)
             return
         }
@@ -935,7 +937,7 @@ extension Vehicle {
 
         if container.allKeys.contains(.car), try container.decodeNil(forKey: .car) == false {
             let associatedValues = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .car)
-            let description = try associatedValues.decode(VehicleData.self, forKey: .description)
+            let description = try associatedValues.decode(VehicleDescription.self, forKey: .description)
             let engineType = try associatedValues.decode(EngineType.self, forKey: .engineType)
             let drivetrain = try associatedValues.decode(DrivetrainType.self, forKey: .drivetrain)
             self = .car(description: description, engineType: engineType, drivetrain: drivetrain)

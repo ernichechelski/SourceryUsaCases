@@ -3,10 +3,10 @@
 
 
 internal extension CarName {
-    var AudiModel: AudiModel? {
+    var AudiAudimodel: AudiModel? {
         switch self {
-            case .Audi(let model):
-                return model 
+            case .Audi(let audiModel):
+                return audiModel 
             case .BMW: return nil
             case .Buick: return nil
             case .Cadillac: return nil
@@ -14,7 +14,7 @@ internal extension CarName {
             case .Chrysler: return nil
             case .Dodge: return nil
             case .Ferrari: return nil
-            case .Ford(let model):
+            case .Ford(_):
                 return nil
             case .GM: return nil
             case .GEM: return nil
@@ -32,7 +32,7 @@ internal extension CarName {
             case .Lexus: return nil
             case .Lincoln: return nil
             case .Lotus: return nil
-            case .Mazda(let model):
+            case .Mazda(_):
                 return nil
             case .MercedesBenz: return nil
             case .Mercury: return nil
@@ -52,9 +52,9 @@ internal extension CarName {
             case .Volvo: return nil
         }
     }
-    var FordModel: FordModel? {
+    var FordFordmodel: FordModel? {
         switch self {
-            case .Audi(let model):
+            case .Audi(_):
                 return nil
             case .BMW: return nil
             case .Buick: return nil
@@ -63,8 +63,8 @@ internal extension CarName {
             case .Chrysler: return nil
             case .Dodge: return nil
             case .Ferrari: return nil
-            case .Ford(let model):
-                return model 
+            case .Ford(let fordModel):
+                return fordModel 
             case .GM: return nil
             case .GEM: return nil
             case .GMC: return nil
@@ -81,7 +81,7 @@ internal extension CarName {
             case .Lexus: return nil
             case .Lincoln: return nil
             case .Lotus: return nil
-            case .Mazda(let model):
+            case .Mazda(_):
                 return nil
             case .MercedesBenz: return nil
             case .Mercury: return nil
@@ -101,9 +101,9 @@ internal extension CarName {
             case .Volvo: return nil
         }
     }
-    var MazdaModel: MazdaModel? {
+    var MazdaMazdamodel: MazdaModel? {
         switch self {
-            case .Audi(let model):
+            case .Audi(_):
                 return nil
             case .BMW: return nil
             case .Buick: return nil
@@ -112,7 +112,7 @@ internal extension CarName {
             case .Chrysler: return nil
             case .Dodge: return nil
             case .Ferrari: return nil
-            case .Ford(let model):
+            case .Ford(_):
                 return nil
             case .GM: return nil
             case .GEM: return nil
@@ -130,8 +130,8 @@ internal extension CarName {
             case .Lexus: return nil
             case .Lincoln: return nil
             case .Lotus: return nil
-            case .Mazda(let model):
-                return model 
+            case .Mazda(let mazdaModel):
+                return mazdaModel 
             case .MercedesBenz: return nil
             case .Mercury: return nil
             case .Mitsubishi: return nil
@@ -188,7 +188,7 @@ internal extension FuelType {
                 return nil
         }
     }
-    var dieselQuality: Int? {
+    var dieselQuality: [DieselFuelType]? {
         switch self {
             case .petrol(let quality):
                 return nil
@@ -198,7 +198,7 @@ internal extension FuelType {
     }
 }
 internal extension Vehicle {
-    var carAssociatedValues: (description: VehicleData, engineType: EngineType, drivetrain: DrivetrainType)? {
+    var carAssociatedValues: (description: VehicleDescription, engineType: EngineType, drivetrain: DrivetrainType)? {
         switch self {
             case .car(let description,let engineType,let drivetrain):
                 return (description,engineType,drivetrain)
